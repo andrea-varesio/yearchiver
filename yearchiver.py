@@ -2,15 +2,16 @@
 #https://github.com/andrea-varesio/yearchiver
 
 from argparse import ArgumentParser
-from datetime import date, datetime
-from inquirer import Checkbox, List, prompt
-from inquirer.themes import GreenPassion
-from os import listdir, mkdir, stat, walk
+from datetime import datetime
+from os import mkdir, stat, walk
 from os.path import basename, dirname, isdir, isfile, join, splitext
 from shutil import move
 from sys import exit
 
-def license():
+from inquirer import Checkbox, prompt
+from inquirer.themes import GreenPassion
+
+def show_license():
     print('\n**************************************************')
     print('"yearchiver" - Automatically sort files into folders by year')
     print('Copyright (C) 2022 Andrea Varesio (https://www.andreavaresio.com/).')
@@ -20,7 +21,8 @@ def license():
     print('**************************************************\n\n')
 
 def parser():
-    parser = ArgumentParser(description='Copyright (C) 2022 Andrea Varesio <https://www.andreavaresio.com>')
+    show_license()
+    parser = ArgumentParser()
     extensions = parser.add_mutually_exclusive_group()
     parser.add_argument('-i', '--input', help='Specify input directory', type=str)
     parser.add_argument('-o', '--output', help='Specify output directory', type=str)
@@ -92,7 +94,7 @@ else:
     filter = filter_media()
 
 if not args.quiet:
-    license()
+    show_license()
 
 if not args.quiet and not args.input and not args.output and not args.dry_run:
     print('Process files in current working directory?')
