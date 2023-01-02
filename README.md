@@ -1,3 +1,6 @@
+# ⚠️ WARNING ⚠️
+This project is no longer being maintained. Use at your own risk.
+
 # yearchiver
 
 ## What is it
@@ -38,7 +41,7 @@ GNU GENERAL PUBLIC LICENSE
 Version 3, 29 June 2007
 
 "yearchiver" - Automatically sort files into folders by year.<br />
-Copyright (C) 2022 Andrea Varesio <https://www.andreavaresio.com/>.
+Copyright (C) 2023 Andrea Varesio <https://www.andreavaresio.com/>.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
